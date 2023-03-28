@@ -39,3 +39,4 @@ int main(void)
 	p[i] = '\0';
 	printf("%s", p);
 	return (0);
+}
