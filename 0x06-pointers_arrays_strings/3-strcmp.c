@@ -1,19 +1,23 @@
-#include <stdio.h>
-#include <string.h>
+#include "main.h"
 
-int main() {
-    char str1[] = "Hello";
-    char str2[] = "hello";
-    
-    int result = _strcmp(str1, str2);
-    
-    if (result == 0) {
-        printf("The strings are equal.\n");
-    } else if (result < 0) {
-        printf("The first string is less than the second string.\n");
-    } else {
-        printf("The first string is greater than the second string.\n");
-    }
-    
-    return 0;
+/**
+ * _strcmp -  function that compares two strings.
+ * @s1: primera cadena.
+ * @s2: segunda cadena.
+ * Return: 0.
+ */
+
+int _strcmp(char *s1, char *s2)
+{
+	int res = 0;
+
+	while (*s1 == *s2 && *s1 != '\0')
+	{
+		s1++;
+		s2++;
+	}
+	if (s1 != s2)
+		res = *s1 - *s2;
+
+	return (res);
 }

@@ -1,14 +1,29 @@
-#include <stdio.h>
-#include <string.h>
+#include "main.h"
 
-int main() {
-    char str1[50] = "Hello";
-    char str2[] = ", world!";
-    
-    printf("Before concatenation: %s\n", str1);
-    _strcat(str1, str2);
-    printf("After concatenation: %s\n", str1);
-    
-    return 0;
+/**
+ * _strcat - function that concatenates two strings.
+ * @src: cadena a copiar
+ * @dest: destino de la cadena.
+ * Return: dest.
+ */
+
+char *_strcat(char *dest, char *src)
+{
+	int i;
+	int j;
+
+	i = 0;
+	while (dest[i] != '\0')
+	{
+		i++;
+	}
+	j = 0;
+	while (src[j] != '\0')
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
-

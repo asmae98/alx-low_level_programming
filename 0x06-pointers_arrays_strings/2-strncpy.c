@@ -1,13 +1,31 @@
-#include <stdio.h>
-#include <string.h>
+#include "main.h"
 
-int main() {
-    char str1[50] = "Hello";
-    char str2[] = ", world!";
-    
-    printf("Before copying: %s\n", str1);
-    _strncpy(str1, str2, 5);
-    printf("After copying: %s\n", str1);
-    
-    return 0;
+/**
+ * _strncpy -  function that copies a string..
+ * @src: cadena a copiar
+ * @dest: destino de la cadena.
+ * @n: number.
+ * Return: void
+ */
+
+char *_strncpy(char *dest, char *src, int n)
+{
+	int i;
+
+	i = 0;
+
+	while (src[i] != '\0' && i < n)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+
+	return (dest);
 }
+
